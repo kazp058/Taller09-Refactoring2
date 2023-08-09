@@ -41,28 +41,14 @@ public class SistemaAtencionMedico {
         return costoConsulta - valorARestar;
     }
 
-    // se puede parametrizar (obtener...)
-    public Paciente obtenerPaciente(String nombrePaciente) {
-        for(Paciente paciente : pacientes){
-            if (paciente.getNombre().equals(nombrePaciente))
-                return paciente;
+    public Object obtener(Class classObject, name){
+        if(classObject == null) return null;
+        if(classObject.class == Paciente.class
+        || classObject.class == ServicioMedico.class
+        || classObject.class == Medico.class){
+            if (classObject.getNombre().equals(name))
+                return result;
         }
         return null;
-    }
-
-    public ServicioMedico obtenerServicioMedico(String nombreServicio) {
-        for(ServicioMedico servicioMedico : serviciosMedicos){
-            if (servicioMedico.getNombre().equals(nombreServicio))
-                return servicioMedico;
-        }
-        return null;
-    }
-
-    public Medico obtenerMedico(String nombreMedico) {
-        for(Medico medico : medicos){
-            if (medico.getNombre().equals(nombreMedico))
-                return medico;
-        }
-        return null;
-    }
+    } 
 }
