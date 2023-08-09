@@ -27,17 +27,18 @@ public class SistemaAtencionMedico {
     public void agendarConsulta(Paciente paciente, Consulta consulta){
         double costoConsulta = consulta.getServicioMedico().getCosto();
         int edadPaciente = paciente.getEdad();
-        costoConsulta = calcularValorFinalConsulta(costoConsulta,edadPaciente);
+        costoConsulta = calcularValorFinalConsulta(consulta,paciente);
         System.out.println("Se han cobrado "+ costoConsulta+ " dolares de su tarjeta de credito");
         paciente.historialMedico.getConsultas().add(consulta); //Hacer esto es incorrecto
     }
 
-    public double calcularValorFinalConsulta(double costoConsulta, int edadPaciente){
+    public double calcularValorFinalConsulta(Consulta consulta, Paciente paciente){
         double valorARestar = 0;
+        double costoConsulta = consulta.getServicioMedico().getCosto();
         if(edadPaciente>=65){
             valorARestar = costoConsulta*0.25; //0.25 es el descuento para adultos mayores
         }
-        return costoConsulta-valorARestar;
+        return costoConsulta - valorARestar;
     }
 
     // se puede parametrizar (obtener...)
