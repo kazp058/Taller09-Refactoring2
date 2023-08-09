@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HistorialMedico {
@@ -11,18 +12,28 @@ public class HistorialMedico {
     }
 
     public List<Consulta> getConsultas() {
-        return consultas;
+        return Collections.unmodifiableList(consultas);
     }
 
+    /* 
     public void setConsultas(List<Consulta> consultas) {
         this.consultas = consultas;
     }
-
+*/
     public List<RecetaMedica> getRecetasMedicas() {
-        return recetasMedicas;
+        return Collections.unmodifiableList(recetasMedicas);
     }
-
+/* 
     public void setRecetasMedicas(List<RecetaMedica> recetasMedicas) {
         this.recetasMedicas = recetasMedicas;
     }
+
+    */
+    public void agregarConsulta(Consulta consulta) {
+        consultas.add(consulta);
+    }
+    public void agregarRecetaMedica(RecetaMedica recetaMedica) {
+        recetasMedicas.add(recetaMedica);
+    }
+
 }
