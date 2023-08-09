@@ -1,6 +1,8 @@
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Consulta {
+    private static final double DESCUENTO_ADULTO_MAYOR = 0.25;
     private LocalDateTime fechaHora;
     private Paciente paciente;
     private Medico medico;
