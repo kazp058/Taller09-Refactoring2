@@ -67,11 +67,15 @@ public class Consulta {
     }
 
     public List<String> getExamenesMedicos() {
-        return examenesMedicos;
+        return Collections.unmodifiableList(examenesMedicos);
     }
 
-    public void setExamenesMedicos(List<String> examenesMedicos) {
-        this.examenesMedicos = examenesMedicos;
+    public void addExamenesMedicos(String examenMedico){
+        this.examenesMedicos.add(examenMedico);
+    }
+
+    public void deleteExamenesMedicos(String examenMedico){
+        this.examenesMedicos.remove(examenMedico);
     }
 
     public ServicioMedico getServicioMedico() {

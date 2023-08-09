@@ -14,10 +14,6 @@ public class RecetaMedica {
         this.medicamentos = medicamentos;
     }
 
-    public void agregarMedicamento(String medicamento) {
-        medicamentos.add(medicamento);
-    }
-
     public LocalDateTime getFechaHora() {
         return fechaHora;
     }
@@ -43,10 +39,14 @@ public class RecetaMedica {
     }
 
     public List<String> getMedicamentos() {
-        return medicamentos;
+        return Collections.unmodifiableList(medicamentos);
     }
 
-    public void setMedicamentos(List<String> medicamentos) {
-        this.medicamentos = medicamentos;
+    public void agregarMedicamento(String medicamento) {
+        medicamentos.add(medicamento);
+    }
+
+    public void eliminarMedicamento(String medicamento) {
+        medicamentos.remove(medicamento);
     }
 }
