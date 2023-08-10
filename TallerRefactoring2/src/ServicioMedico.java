@@ -34,10 +34,16 @@ public class ServicioMedico {
         return costo;
     }
 
-    public void setCosto(double costo) {
+    /*public void setCosto(double costo) {
         if(costo<0){
             System.out.println("El costo no puede ser menor a 0");
             return;
+        }
+        this.costo = costo;
+    }*/
+    public void setCosto(double costo) {
+        if (costo < 0) {
+            throw new IllegalArgumentException("El costo no puede ser menor a 0");
         }
         this.costo = costo;
     }

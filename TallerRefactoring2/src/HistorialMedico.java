@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HistorialMedico {
@@ -23,15 +24,24 @@ public class HistorialMedico {
     }
 
     public List<RecetaMedica> getRecetasMedicas() {
-        return Collections.unmodifiableList(recetasMedicas);
+        return Collections.unmodifiableList(Collections.unmodifiableList(recetasMedicas);
     }
 
     public void addRecetaMedica(RecetaMedica recetaMedica){
-        this.recetasMedicas.add(recetaMedica);
+        this.recetasMedicas).add(recetaMedica);
     }
 
     public void removeRecetaMedica(RecetaMedica recetaMedica){
         this.recetasMedicas.remove(recetaMedica);
+    }
+
+
+    */
+    public void agregarConsulta(Consulta consulta) {
+        consultas.add(consulta);
+    }
+    public void agregarRecetaMedica(RecetaMedica recetaMedica) {
+        recetasMedicas.add(recetaMedica);
     }
 
 }
